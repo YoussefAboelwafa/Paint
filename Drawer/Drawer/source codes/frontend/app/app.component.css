@@ -1,0 +1,200 @@
+
+.container{
+    
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    max-width: 1800px;
+    gap: 10px;
+    padding: 10px;
+}
+section{
+    background: #fff;
+    border-radius: 20px;
+}
+#board{
+    
+    width: 1500px;
+    height: 820;
+}
+.title{
+    margin-top:10px ;
+    padding: 8px;
+    font-weight: 900;
+    font-size: xx-large;
+    color: #0107be;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: rgb(210, 210, 210);
+}
+.tools{
+    width:200px;
+    padding:5px 30px 20px 30px;
+    height:820px;
+
+}
+
+.tools .row{
+    margin-bottom: 0px;
+}
+.row .options{
+    list-style: none;
+    margin: 2px 0 0 5px;
+}
+.row .options .option{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+.option{
+    list-style-type: none;
+    padding: 5px;
+}
+
+.option:is(:hover, .active) img{
+    cursor: pointer;
+}
+
+ul{
+    margin: 0px;
+    padding-left: 5px;
+}
+
+.option :where(button){
+    padding-left:10px ;
+    cursor: pointer;
+}
+.option:is(:hover, .active) :where(button, label){
+        color:#000dff;
+}
+
+
+.buttons button{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding : 8px 0;
+    margin-bottom: 5px;
+    margin-top: 4px;
+    background: none;
+    border-radius: 15px;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+    background: #2c89fc ;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.buttons #clearalldisable{
+    cursor: default;
+    background-color: rgb(101, 101, 101);
+}
+
+
+.buttons #clearall:hover{
+    background:#0042d0  ;
+    color: white;
+    box-shadow: 0px 0px 10px 4px rgb(0, 0, 0);
+}
+.buttons #save:hover{
+    background:#0042d0  ;
+    color: white;
+    box-shadow: 0px 0px 10px 4px rgb(0, 0, 0);
+}
+.buttons #load:hover{
+    background:#0042d0  ;
+    color: white;
+    box-shadow: 0px 0px 10px 4px rgb(0, 0, 0);
+}
+
+.option button {
+    border: none;
+    outline: none;
+    background: #fff;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 18px;
+    margin-left: 0px;
+}
+
+.option:is(:hover, .active) img{
+    filter: invert(18%) sepia(90%) saturate(3000%) brightness(100%) contrast(100%) hue-rotate(900deg);
+    cursor: pointer;
+}
+
+#color-picker{
+   
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-top: 0 px;
+    border: none;
+    cursor: pointer;
+    
+}
+input::-webkit-color-swatch{
+    border-radius: 20px;
+    border: 4px solid black;
+}
+.option label {
+    font-size: 20px;
+    cursor:default;
+    margin-left: 10px;
+}
+
+.option .ur {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.save_load{
+    border-radius: 10px;
+    text-align:left;
+    justify-content: center;
+    padding: 5px;
+    padding-right:2px;
+    border-color: #00408e;
+    border-width: 2px;
+    margin-left:3px;
+    font-size:14px;
+    width: 90%;
+    
+}
+.name{
+
+    border-radius: 10px;
+    text-align:left;
+    justify-content: center;
+    padding: 5px;
+    padding-right:5px;
+    border-color: #00408e;
+    border-width: 2px;
+    margin-left:27px;
+    font-size:14px;
+    width: 55%;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-right: 6px;
+
+}
+.imgbutton{
+    margin-left: 10px;
+    text-align:center;
+    justify-content: center;
+}
+
+.format  #json{
+
+    margin-left:30px;
+}
+.format  {
+
+    align-items: center;
+    justify-content: center;
+    margin-left:15px ;
+}

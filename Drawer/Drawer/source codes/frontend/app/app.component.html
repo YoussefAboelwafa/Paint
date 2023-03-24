@@ -1,0 +1,127 @@
+<div class="container"> 
+  <section class="tools">
+   
+    
+    <div class="row">
+      <label class="title">Shapes</label>
+      <ul class="options" >
+        <li class="option">
+          <img class="images" src="assets/icons/rectangle.png" alt="">
+          <button (click)="drawrect()">Rectangle</button>
+        </li>
+        <li class="option">
+          <img class="images" src="assets/icons/square.svg" alt="">
+          <button (click)="drawsquare()">Square</button>
+        </li> 
+        <li class="option">
+          <img class="images" src="assets/icons/circle.svg" alt="">
+          <button (click)="drawcircle()">Circle</button>
+        </li>
+        <li class="option">
+          <img class="images" src="assets/icons/triangle.svg" alt="">
+          <button (click)="drawtriangle(3)">Triangle</button>
+        </li>
+        <li class="option">
+          <img class="images" src="assets/icons/ellipse.png" alt="">
+          <button (click)="drawellipse()">Ellipse</button>
+        </li>
+        <li class="option">
+          <img class="images" src="assets/icons/pentagon.png" alt="">
+          <button (click)="drawtriangle(5)">Pentagon</button>
+        </li>
+        <li class="option">
+          <img class="images" src="assets/icons/hexagon.png" alt="">
+          <button (click)="drawtriangle(6)">Hexagon</button>
+        </li>
+        <li class="option">
+          <img class="images" src="assets/icons/line.png" alt="">
+          <button (click)="drawline()">Line</button>
+        </li>
+        <li class="option">
+          <img class="images" src="assets/icons/brush.svg" alt="">
+          <button (click)="brush()">Brush</button>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="row">
+      <label class="title">Options</label>
+      <ul class="options">
+        <li class="option">
+          <img class="images" src="assets/icons/fill.png" alt="">
+          <label>Fill color</label>
+          <input type="color" value= "#4a98f7" #box id="color-picker" (blur)="get_fill_color(box.value)" >
+                    
+
+        </li>
+        
+        <li class="option" style="display: inline">
+          <img class="images" src="assets/icons/copy.png">
+          <button (click)="copy()">Copy</button>
+        </li>
+        <li class="option" style="display: inline">
+          <img class="images" src="assets/icons/eraser.svg">
+          <button (click)="remove_selected_shape()">Eraser</button>
+        </li>
+        <li class="option"  style="display: inline" *ngIf="moves!=0">
+          <img class="images" src="assets/icons/undo.png" alt="">
+          <button class="ur" (click)="undo()">Undo</button>
+        </li>
+
+        <li class="option"  style="display: inline" *ngIf="moves==0">
+          <img class="images" src="assets/icons/undo.png" style="filter:none">
+          <button class="ur" disabled style="color:rgb(186, 186, 186)">Undo</button>
+        </li>
+
+        <li class="option" style="display: inline" *ngIf="undo_count!=0">
+          <img class="images" src="assets/icons/redo.png">
+          <button class="ur" (click)="redo()">Redo</button>
+        </li>
+        <li class="option" style="display: inline" *ngIf="undo_count==0" >
+          <img class="images" src="assets/icons/redo.png" style="filter:none" >
+          <button class="ur" disabled style="color:rgb(186, 186, 186)">Redo</button>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="row buttons">
+      
+      <button id="clearalldisable" disabled *ngIf="clear==0">Clear All<img class="imgbutton" src="assets/icons/clear.png"></button>
+      <button id="clearall" (click)="clear_request()" *ngIf="clear!=0">Clear All<img class="imgbutton" src="assets/icons/clear.png" alt=""></button>
+      
+      <button id="save"   (click)="saveFile(save.value)" (click)="get_file_name(name.value)">Save<img class="imgbutton" src="assets/icons/save.png"></button>
+      
+
+    
+    
+
+      
+      <input type="text" #name class="name" placeholder="Enter name of file "  (blur)="get_file_name(name.value)" style="display: inline;">
+      
+      <input type="text" #save class="save_load" placeholder="File path to save (xml / json)" >
+      <div class="format" style="display: inline;">
+        <ul style="list-style-type: none; display:inline-flex" >
+         
+        <li id="xml"><input type="radio" name="radio" value="xml" #xml (blur)="get_file_ex(xml.value)" checked style="accent-color: #2c89fc;" >xml</li>
+        
+        <li id="json"><input type="radio" name="radio" value="json" #json (blur)="get_file_ex(json.value)" style="accent-color: #2c89fc;"> json</li>
+      </ul>
+      </div>
+    
+    
+
+      
+      <button id="load"  (click)="loadFile(load.value)">Load<img class="imgbutton" src="assets/icons/load.png"></button>
+      <input type="text" #load class="save_load" placeholder="File path to load (xml / json)" >
+      
+      
+    </div>
+
+    
+  </section>
+  <section id="board">
+
+  </section>
+</div>
